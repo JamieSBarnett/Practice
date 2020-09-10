@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<script>
+
+function startTime() {
+
+  var now = new Date();
+  var h = now.getHours();
+  var m = now.getMinutes();
+  var s = now.getSeconds();
+
+  m = checkTime(m);
+  s = checkTime(s);
+  
+  document.getElementById('time').innerHTML = h+":"+m+":"+s+timeOfDay
+  var t = setTimeout(startTime, 1000);
+}
+
+//this is to add 0 before single digit times it is stating display a 0 if the number is lower than 10
+function checkTime(i) {if (i < 10) {i = "0" + i};  
+ return i;
+
+</script>
+
+</head>
+
+<body onload="startTime()">
+
+<div id="time"></div>
+
+</body>
+
+</html>
